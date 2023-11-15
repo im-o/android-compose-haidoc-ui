@@ -15,16 +15,41 @@ import id.rivaldy.core.R
 object UtilStrings {
     @Composable
     fun noAccountSpanned() = buildAnnotatedString {
-        withStyle(style = SpanStyle(color = Color.Black)) {
-            append("${stringResource(id = R.string.no_account)} ")
+        withStyle(
+            style = SpanStyle(
+                color = Color.Gray.copy(alpha = 0.4f),
+                fontWeight = FontWeight.Medium
+            )
+        ) {
+            append("${stringResource(id = R.string.no_account)}  ")
         }
         withStyle(
             style = SpanStyle(
                 color = MaterialTheme.colorScheme.primary,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.ExtraBold,
             )
         ) {
             append(stringResource(id = R.string.register_now))
+        }
+    }
+
+    @Composable
+    fun welcomeSpanned() = buildAnnotatedString {
+        withStyle(
+            style = SpanStyle(
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.Medium
+            )
+        ) {
+            append("${stringResource(id = R.string.hi)} ")
+        }
+        withStyle(
+            style = SpanStyle(
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.ExtraBold,
+            )
+        ) {
+            append(stringResource(id = R.string.welcome))
         }
     }
 }

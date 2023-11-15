@@ -7,6 +7,7 @@
     <string name="password">Password</string>
     <string name="input_password">Masukkan password anda</string>
     <string name="hide_password">Hide password</string>
+    <string name="forgot_your_password">Lupa Password anda ?</string>
     <string name="search">Search</string>
     <string name="clear">Clear</string>
     <string name="login">Login</string>
@@ -14,6 +15,10 @@
     <string name="home">Home</string>
     <string name="setting">Pengaturan</string>
     <string name="my_profile">Profile Saya</string>
+    <string name="hi">Hai,</string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="login_to_continue">Silahkan login untuk melanjutkan</string>
+    <string name="right_reserved">SILK. all right reserved.</string>
 
     <string name="show_password">Show password</string>
     <string name="already_account">Already have an account?</string>
