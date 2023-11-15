@@ -7,6 +7,7 @@ import androidx.navigation.navigation
 import id.rivaldy.core.data.model.local.screen.auth.AuthScreenRoute
 import id.rivaldy.core.util.Graph
 import id.rivaldy.feature.auth.ui.login.LoginScreen
+import id.rivaldy.feature.auth.ui.register.RegisterScreen
 
 /** Created by github.com/im-o on 11/15/2023. */
 
@@ -29,6 +30,20 @@ fun NavGraphBuilder.authNavGraph(
                 navigateToRegister = {
                     navController.navigate(route = AuthScreenRoute.RegisterUser.route)
                 },
+            )
+        }
+        composable(route = AuthScreenRoute.RegisterUser.route) {
+            RegisterScreen(
+                navigateToHome = {
+                    navController.navigate(Graph.MAIN) {
+//                        popUpTo(navController.graph.findStartDestination().id) {
+//                            inclusive = true
+//                        }
+                    }
+                },
+                navigateToLogin = {
+                    navController.navigateUp()
+                }
             )
         }
     }

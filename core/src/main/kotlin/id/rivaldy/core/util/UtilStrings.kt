@@ -34,6 +34,26 @@ object UtilStrings {
     }
 
     @Composable
+    fun haveAccountSpanned() = buildAnnotatedString {
+        withStyle(
+            style = SpanStyle(
+                color = Color.Gray.copy(alpha = 0.4f),
+                fontWeight = FontWeight.Medium
+            )
+        ) {
+            append("${stringResource(id = R.string.have_account)}  ")
+        }
+        withStyle(
+            style = SpanStyle(
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.ExtraBold,
+            )
+        ) {
+            append(stringResource(id = R.string.login_now))
+        }
+    }
+
+    @Composable
     fun welcomeSpanned() = buildAnnotatedString {
         withStyle(
             style = SpanStyle(
