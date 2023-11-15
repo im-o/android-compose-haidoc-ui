@@ -42,7 +42,14 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-
+    tasks.withType().configureEach {
+        kotlinOptions {
+            freeCompilerArgs = freeCompilerArgs + listOf(
+                "-opt-in=kotlin.RequiresOptIn",
+                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+            )
+        }
+    }
     // some bug when using `kapt` in gradle 8.1.1 and replace jdk with jvmToolchain
     // https://github.com/google/ksp/issues/1288
     kotlin {
