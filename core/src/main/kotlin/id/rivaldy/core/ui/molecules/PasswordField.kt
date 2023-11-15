@@ -42,6 +42,9 @@ import id.rivaldy.core.util.Dimens
 
 @Composable
 fun PasswordField(
+    hint: String,
+    keyboardType: KeyboardType = KeyboardType.Password,
+    imeAction: ImeAction = ImeAction.Next,
     onPasswordChange: (String) -> Unit = {},
 ) {
     var password by remember { mutableStateOf(TextFieldValue()) }
@@ -70,13 +73,13 @@ fun PasswordField(
                 fontWeight = FontWeight.Bold,
             ),
             keyboardOptions = KeyboardOptions.Default.copy(
-                keyboardType = KeyboardType.Password,
-                imeAction = ImeAction.Done
+                keyboardType = keyboardType,
+                imeAction = imeAction
             ),
             decorationBox = { innerTextField ->
                 if (password.text.isEmpty()) {
                     Text(
-                        text = stringResource(id = R.string.input_password),
+                        text = hint,
                         fontSize = Dimens.sp12,
                         color = Color.DarkGray,
                     )

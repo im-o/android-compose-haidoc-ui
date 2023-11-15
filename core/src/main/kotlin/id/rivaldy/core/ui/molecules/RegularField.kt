@@ -31,6 +31,8 @@ import id.rivaldy.core.util.Dimens
 @Composable
 fun RegularField(
     hint: String,
+    keyboardType: KeyboardType = KeyboardType.Text,
+    imeAction: ImeAction = ImeAction.Next,
     onTextChange: (String) -> Unit = {},
 ) {
     var text by remember { mutableStateOf(TextFieldValue()) }
@@ -58,15 +60,15 @@ fun RegularField(
                 fontWeight = FontWeight.Bold
             ),
             keyboardOptions = KeyboardOptions.Default.copy(
-                keyboardType = KeyboardType.Email,
-                imeAction = ImeAction.Next
+                keyboardType = keyboardType,
+                imeAction = imeAction,
             ),
             decorationBox = { innerTextField ->
                 if (text.text.isEmpty()) {
                     Text(
                         text = hint,
                         fontSize = Dimens.sp12,
-                        color = Color.DarkGray, // You can customize the color of the hint
+                        color = Color.DarkGray,
                     )
                 }
                 innerTextField()
