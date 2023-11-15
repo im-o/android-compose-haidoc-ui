@@ -30,7 +30,7 @@ fun LoginScreen(
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
-                LoginSection(navigateToHome = navigateToHome, navigateToRegister = navigateToRegister)
+                LoginSection(navigateToHome = navigateToHome, navigateToForm = navigateToRegister)
             }
         }
     }

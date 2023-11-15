@@ -16,7 +16,7 @@ import id.rivaldy.core.util.Dimens
 fun LoginSection(
     modifier: Modifier = Modifier,
     navigateToHome: () -> Unit,
-    navigateToRegister: () -> Unit,
+    navigateToForm: () -> Unit,
 ) {
 
     Column(
@@ -26,10 +26,13 @@ fun LoginSection(
     ) {
         Spacer(modifier = modifier.height(Dimens.dp80))
         LoginHeader(modifier = modifier)
-        LoginForm(
+        LoginForm(modifier = modifier)
+        Spacer(modifier = modifier.height(Dimens.dp40))
+        LoginBottom(
             modifier = modifier,
             navigateToHome = navigateToHome,
-            navigateToRegister = navigateToRegister,
+            navigateToForm = navigateToForm,
+            isFromLogin = true,
         )
         Spacer(modifier = modifier.height(Dimens.dp60))
     }
