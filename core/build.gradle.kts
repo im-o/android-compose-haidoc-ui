@@ -3,6 +3,8 @@ import dependencies.MyDependencies
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
 }
 
 android {
@@ -39,6 +41,12 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+
+    // some bug when using `kapt` in gradle 8.1.1 and replace jdk with jvmToolchain
+    // https://github.com/google/ksp/issues/1288
+    kotlin {
+        jvmToolchain(11)
     }
 }
 
@@ -79,4 +87,12 @@ dependencies {
     // Accompanist
     api(MyDependencies.accompanist_pager)
     api(MyDependencies.accompanist_pager_indicator)
+
+    // Hilt
+    implementation(MyDependencies.hilt_android)
+    kapt(MyDependencies.hilt_android_compiler)
+    api(MyDependencies.hilt_compose) {
+        exclude("androidx.lifecycle")
+    }
+    kapt(MyDependencies.hilt_compose_compiler)
 }
