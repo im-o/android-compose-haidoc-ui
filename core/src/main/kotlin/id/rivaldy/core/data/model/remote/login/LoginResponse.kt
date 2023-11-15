@@ -1,4 +1,4 @@
-package id.rivaldy.core.data.model.login
+package id.rivaldy.core.data.model.remote.login
 
 
 import com.google.gson.annotations.SerializedName

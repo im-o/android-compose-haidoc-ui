@@ -1,7 +1,7 @@
 package id.rivaldy.core.domain.usecase.login
 
-import id.rivaldy.core.data.model.login.LoginRequest
-import id.rivaldy.core.data.model.login.LoginResponse
+import id.rivaldy.core.data.model.remote.login.LoginRequest
+import id.rivaldy.core.data.model.remote.login.LoginResponse
 import id.rivaldy.core.domain.repository.login.LoginRepository
 import id.rivaldy.core.domain.usecase.BaseUseCase
 import kotlinx.coroutines.flow.Flow

@@ -1,6 +1,6 @@
 package id.rivaldy.core.data.datasource.remote
 
-import id.rivaldy.core.data.model.login.LoginResponse
+import id.rivaldy.core.data.model.remote.login.LoginResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
