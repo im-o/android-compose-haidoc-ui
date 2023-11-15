@@ -1,4 +1,4 @@
-package id.rivaldy.composehaidoc.ui.theme
+package id.rivaldy.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

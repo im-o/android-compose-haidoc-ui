@@ -58,6 +58,8 @@ android {
 
 dependencies {
     implementation(project(Modules.core))
+    implementation(project(Modules.auth))
+    implementation(project(Modules.home))
 
     // Testing
     testImplementation(MyDependencies.junit)
