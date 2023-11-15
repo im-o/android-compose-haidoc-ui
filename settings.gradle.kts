@@ -18,3 +18,4 @@ rootProject.name = "Compose HaiDoc"
 include(":app")
 include(":core")
 include(":features:auth")
+include(":features:home")
