@@ -1,4 +1,4 @@
-package id.rivaldy.composehaidoc
+package id.rivaldy.composehaidoc.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,11 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import id.rivaldy.composehaidoc.ui.navigation.RootNavGraph
 import id.rivaldy.core.ui.theme.ComposeHaiDocTheme
 
 @AndroidEntryPoint
@@ -19,27 +20,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeHaiDocTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
+                    RootNavGraph(navController = rememberNavController())
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     ComposeHaiDocTheme {
-        Greeting("Android")
+        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+            RootNavGraph(navController = rememberNavController())
+        }
     }
 }

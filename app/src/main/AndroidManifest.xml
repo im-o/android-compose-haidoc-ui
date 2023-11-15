@@ -14,7 +14,7 @@
         android:theme="@style/Theme.ComposeHaiDoc"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.ComposeHaiDoc">
             <intent-filter>
