@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Compose HaiDoc"
 include(":app")
- 
+include(":core")
