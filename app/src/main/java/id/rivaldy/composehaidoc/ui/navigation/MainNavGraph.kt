@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import id.rivaldy.core.data.model.local.screen.drawer.NavDrawerRoute
 import id.rivaldy.core.util.Graph
 import id.rivaldy.feature.home.ui.home.HomeScreen
+import id.rivaldy.feature.home.ui.profile.ProfileScreen
 
 /** Created by github.com/im-o on 11/15/2023. */
 
@@ -21,7 +22,7 @@ fun MainNavGraph(navController: NavHostController) {
             HomeScreen()
         }
         composable(route = NavDrawerRoute.Profile.route) {
-            HomeScreen()
+            ProfileScreen()
         }
         composable(route = NavDrawerRoute.Setting.route) {
             HomeScreen()

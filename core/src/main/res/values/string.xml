@@ -32,6 +32,10 @@
     <string name="confirm_your_password">Konfirmasi password anda</string>
     <string name="login_success">Login successful.</string>
     <string name="close">Close</string>
+    <string name="rivaldy">Rivaldy</string>
+    <string name="membership">Membership BBLK</string>
+    <string name="fully_profile">Lengkapi profile anda untuk memaksimalkan penggunaan aplikasi</string>
+    <string name="save_profile">Simpan profile</string>
 
     <string name="show_password">Show password</string>
     <string name="already_account">Already have an account?</string>

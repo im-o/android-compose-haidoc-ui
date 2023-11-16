@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import id.rivaldy.core.R
@@ -35,13 +36,13 @@ fun NavDrawerHeader(
                 .shadow(elevation = Dimens.dp1, shape = CircleShape)
                 .clip(shape = CircleShape),
             painter = painterResource(id = R.drawable.rival_profile),
-            contentDescription = "image description",
+            contentDescription = stringResource(id = R.string.my_profile),
             contentScale = ContentScale.Crop,
         )
         Spacer(modifier = modifier.width(Dimens.dp16))
         Column(modifier = modifier.align(Alignment.CenterVertically)) {
             Text(
-                text = "Rivaldy",
+                text = stringResource(id = R.string.rivaldy),
                 style = TextStyle(
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
@@ -50,7 +51,7 @@ fun NavDrawerHeader(
             )
             Spacer(modifier = modifier.height(Dimens.dp3))
             Text(
-                text = "Membership BBLK",
+                text = stringResource(id = R.string.membership),
                 style = TextStyle(
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f),
