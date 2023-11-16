@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import id.rivaldy.core.R
 import id.rivaldy.core.data.model.remote.login.LoginRequest
 import id.rivaldy.core.ui.molecules.PasswordField
@@ -60,6 +61,9 @@ fun LoginForm(
             )
         }
         Spacer(modifier = modifier.height(Dimens.dp16))
-        PasswordField(stringResource(id = R.string.input_password)) { password.value = it }
+        PasswordField(
+            hint = stringResource(id = R.string.input_password),
+            imeAction = ImeAction.Done
+        ) { password.value = it }
     }
 }
