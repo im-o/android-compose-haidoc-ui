@@ -1,4 +1,4 @@
-package id.rivaldy.feature.home.ui
+package id.rivaldy.feature.home.ui.home
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable

@@ -16,6 +16,7 @@ object Dimens {
     val dp8: Dp = 8.dp
     val dp10: Dp = 10.dp
     val dp12: Dp = 12.dp
+    val dp14: Dp = 14.dp
     val dp16: Dp = 16.dp
     val dp24: Dp = 24.dp
     val dp20: Dp = 20.dp
@@ -24,6 +25,7 @@ object Dimens {
     val dp38: Dp = 38.dp
     val dp40: Dp = 40.dp
     val dp48: Dp = 48.dp
+    val dp55: Dp = 55.dp
     val dp60: Dp = 60.dp
     val dp80: Dp = 80.dp
     val dp100: Dp = 100.dp
@@ -31,9 +33,12 @@ object Dimens {
     val dp140: Dp = 140.dp
     val dp150: Dp = 150.dp
 
+    val sp11: TextUnit = 11.sp
     val sp12: TextUnit = 12.sp
     val sp14: TextUnit = 14.sp
     val sp16: TextUnit = 16.sp
+    val sp18: TextUnit = 18.sp
+    val sp20: TextUnit = 20.sp
     val sp24: TextUnit = 24.sp
     val sp28: TextUnit = 28.sp
     val sp32: TextUnit = 32.sp
