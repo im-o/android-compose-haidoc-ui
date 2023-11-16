@@ -1,5 +1,6 @@
 package id.rivaldy.composehaidoc.ui.navigation
 
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
@@ -22,9 +23,9 @@ fun NavGraphBuilder.authNavGraph(
             LoginScreen(
                 navigateToHome = {
                     navController.navigate(Graph.MAIN) {
-//                        popUpTo(navController.graph.findStartDestination().id) {
-//                            inclusive = true
-//                        }
+                        popUpTo(navController.graph.findStartDestination().id) {
+                            inclusive = true
+                        }
                     }
                 },
                 navigateToRegister = {
@@ -36,9 +37,9 @@ fun NavGraphBuilder.authNavGraph(
             RegisterScreen(
                 navigateToHome = {
                     navController.navigate(Graph.MAIN) {
-//                        popUpTo(navController.graph.findStartDestination().id) {
-//                            inclusive = true
-//                        }
+                        popUpTo(navController.graph.findStartDestination().id) {
+                            inclusive = true
+                        }
                     }
                 },
                 navigateToLogin = {

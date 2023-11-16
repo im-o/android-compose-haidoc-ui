@@ -32,7 +32,7 @@ fun RegisterSection(
         Spacer(modifier = modifier.height(Dimens.dp40))
         LoginBottom(
             modifier = modifier,
-            navigateToHome = navigateToHome,
+            onButtonActionClicked = navigateToHome,
             navigateToForm = navigateToForm,
             isFromLogin = false,
         )

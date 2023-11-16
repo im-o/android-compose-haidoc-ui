@@ -33,7 +33,7 @@ import id.rivaldy.core.util.UtilStrings
 @Composable
 fun LoginBottom(
     modifier: Modifier = Modifier,
-    navigateToHome: () -> Unit,
+    onButtonActionClicked: () -> Unit,
     navigateToForm: () -> Unit,
     isFromLogin: Boolean = false,
 ) {
@@ -48,7 +48,7 @@ fun LoginBottom(
                 .fillMaxWidth()
                 .shadow(elevation = Dimens.dp8, shape = RoundedCornerShape(Dimens.dp8)),
             shape = RoundedCornerShape(Dimens.dp8),
-            onClick = navigateToHome,
+            onClick = onButtonActionClicked,
             enabled = true,
         ) {
             Box(modifier = Modifier.fillMaxWidth()) {

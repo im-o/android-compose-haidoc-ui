@@ -29,6 +29,7 @@
     <string name="input_phone_number">Masukkan No. Telpon anda</string>
     <string name="confirm_password">Konfirmasi Password</string>
     <string name="confirm_your_password">Konfirmasi password anda</string>
+    <string name="login_success">Login successful.</string>
 
     <string name="show_password">Show password</string>
     <string name="already_account">Already have an account?</string>

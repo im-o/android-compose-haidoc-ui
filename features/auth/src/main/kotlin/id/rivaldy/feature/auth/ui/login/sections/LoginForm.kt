@@ -18,6 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import id.rivaldy.core.R
+import id.rivaldy.core.data.model.remote.login.LoginRequest
 import id.rivaldy.core.ui.molecules.PasswordField
 import id.rivaldy.core.ui.molecules.RegularField
 import id.rivaldy.core.ui.molecules.text.FormHintText
@@ -28,9 +29,11 @@ import id.rivaldy.core.util.Dimens
 @Composable
 fun LoginForm(
     modifier: Modifier = Modifier,
+    loginRequest: (LoginRequest) -> Unit,
 ) {
     val email = remember { mutableStateOf(String()) }
     val password = remember { mutableStateOf(String()) }
+    loginRequest(LoginRequest(email = email.value, password = password.value))
 
     Column(
         modifier = modifier
