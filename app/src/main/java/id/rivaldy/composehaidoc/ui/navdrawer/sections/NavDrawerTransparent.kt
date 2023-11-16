@@ -24,6 +24,7 @@ import id.rivaldy.core.util.Dimens
 @Composable
 fun NavDrawerTransparent(
     modifier: Modifier = Modifier,
+    onDrawerAction: () -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -34,7 +35,9 @@ fun NavDrawerTransparent(
         Spacer(modifier = modifier.height(Dimens.dp38))
         Icon(
             modifier = Modifier
-                .clickable { }
+                .clickable {
+                    onDrawerAction()
+                }
                 .align(Alignment.CenterHorizontally)
                 .size(Dimens.dp24),
             painter = painterResource(id = R.drawable.circle_close),

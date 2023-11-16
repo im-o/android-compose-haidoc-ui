@@ -22,14 +22,18 @@ fun NavDrawerContent(
     modifier: Modifier = Modifier,
     navigationItemContentList: List<NavDrawerModel>,
     navController: NavHostController,
-    currentDestination: NavDestination?
+    currentDestination: NavDestination?,
+    onDrawerAction: () -> Unit,
 ) {
     Row(
         modifier = modifier
             .background(Color.Transparent)
             .fillMaxSize()
     ) {
-        NavDrawerTransparent(modifier = modifier)
+        NavDrawerTransparent(
+            modifier = modifier,
+            onDrawerAction = onDrawerAction,
+        )
         Column(
             modifier = modifier
                 .fillMaxSize()
@@ -43,7 +47,8 @@ fun NavDrawerContent(
                     modifier = modifier,
                     navigationItemContentList = navigationItemContentList,
                     navController = navController,
-                    currentDestination = currentDestination
+                    currentDestination = currentDestination,
+                    onDrawerAction = onDrawerAction
                 )
             }
             Spacer(modifier = modifier.height(Dimens.dp80))

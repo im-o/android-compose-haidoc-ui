@@ -40,6 +40,7 @@ fun NavDrawerMenu(
     navigationItemContentList: List<NavDrawerModel>,
     navController: NavHostController,
     currentDestination: NavDestination?,
+    onDrawerAction: () -> Unit,
 ) {
     Column {
         navigationItemContentList.forEach { screen ->
@@ -47,7 +48,8 @@ fun NavDrawerMenu(
                 modifier = modifier,
                 screen = screen,
                 currentDestination = currentDestination,
-                navController = navController
+                navController = navController,
+                onDrawerAction = onDrawerAction
             )
             Spacer(modifier = modifier.height(Dimens.dp8))
         }
@@ -77,7 +79,8 @@ fun NavDrawerItem(
     modifier: Modifier = Modifier,
     screen: NavDrawerModel,
     currentDestination: NavDestination?,
-    navController: NavHostController
+    navController: NavHostController,
+    onDrawerAction: () -> Unit,
 ) {
     val selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true
     val contentColor = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)
@@ -87,6 +90,7 @@ fun NavDrawerItem(
             .fillMaxWidth()
             .height(Dimens.dp32)
             .clickable(onClick = {
+                onDrawerAction()
                 navController.navigate(screen.route) {
                     popUpTo(navController.graph.findStartDestination().id)
                     launchSingleTop = true
