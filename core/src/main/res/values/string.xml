@@ -20,6 +20,8 @@
     <string name="my_profile">Profile Saya</string>
     <string name="hi">Hai,</string>
     <string name="welcome">Selamat Datang</string>
+    <string name="solution">Solusi,</string>
+    <string name="your_health">Kesehatan Anda</string>
     <string name="login_to_continue">Silahkan login untuk melanjutkan</string>
     <string name="right_reserved">SILK. all right reserved.</string>
     <string name="first_name">Name Depan</string>
@@ -36,6 +38,8 @@
     <string name="membership">Membership BBLK</string>
     <string name="fully_profile">Lengkapi profile anda untuk memaksimalkan penggunaan aplikasi</string>
     <string name="save_profile">Simpan profile</string>
+    <string name="update_information">Update informasi seputar kesehatan semua bisa disini !</string>
+    <string name="more">Selengkapnya</string>
 
     <string name="show_password">Show password</string>
     <string name="already_account">Already have an account?</string>

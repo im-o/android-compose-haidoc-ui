@@ -72,4 +72,24 @@ object UtilStrings {
             append(stringResource(id = R.string.welcome))
         }
     }
+
+    @Composable
+    fun titleSliderSpanned() = buildAnnotatedString {
+        withStyle(
+            style = SpanStyle(
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.Medium
+            )
+        ) {
+            append("${stringResource(id = R.string.solution)} ")
+        }
+        withStyle(
+            style = SpanStyle(
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.ExtraBold,
+            )
+        ) {
+            append(stringResource(id = R.string.your_health))
+        }
+    }
 }
