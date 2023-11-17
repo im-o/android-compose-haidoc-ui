@@ -20,7 +20,7 @@ import id.rivaldy.core.util.Dimens
 /** Created by github.com/im-o on 11/16/2023. */
 
 @Composable
-fun NavDrawerContent(
+fun NavDrawerSection(
     modifier: Modifier = Modifier,
     navigationItemContentList: List<NavDrawerModel>,
     navController: NavHostController,
