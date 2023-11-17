@@ -12,16 +12,15 @@ import id.rivaldy.core.util.Dimens
 
 @Composable
 fun HomeSection(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-    ) {
+    Column(modifier = modifier.fillMaxWidth()) {
         Spacer(modifier = modifier.height(Dimens.dp24))
         HomeSlider()
         HomeBannerService(modifier = modifier)
         HomeBannerTrack(modifier = modifier)
-        Spacer(modifier = modifier.height(Dimens.dp24))
+        Spacer(modifier = modifier.height(Dimens.dp8))
+        HomeSearchBar(modifier = modifier)
+        Spacer(modifier = modifier.height(Dimens.dp40))
     }
 }
