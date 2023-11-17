@@ -1,39 +1,40 @@
 package id.rivaldy.core.ui.molecules
 
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.border
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Clear
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.unit.Dp
 import id.rivaldy.core.R
 import id.rivaldy.core.util.Dimens
 
@@ -41,70 +42,91 @@ import id.rivaldy.core.util.Dimens
 
 @Composable
 fun SearchBar(
-    query: String,
+    hint: String,
     modifier: Modifier = Modifier,
     isEnabled: (Boolean) = true,
+    height: Dp = Dimens.dp40,
+    elevation: Dp = Dimens.dp3,
+    cornerShape: Shape = RoundedCornerShape(Dimens.dp8),
+    backgroundColor: Color = Color.White,
     onSearchClicked: () -> Unit = {},
-    onQueryChange: (String) -> Unit = {},
+    onTextChange: (String) -> Unit = {},
 ) {
-    var isTextFieldFocused by remember { mutableStateOf(false) }
-
-    Box(
+    var text by remember { mutableStateOf(TextFieldValue()) }
+    Row(
         modifier = Modifier
+            .height(height)
             .fillMaxWidth()
-            .clickable { onSearchClicked() }
+            .shadow(elevation = elevation, shape = cornerShape)
+            .background(color = backgroundColor, shape = cornerShape)
+            .clickable { onSearchClicked() },
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        TextField(
-            value = query,
-            onValueChange = onQueryChange,
-            enabled = isEnabled,
+        BasicTextField(
             modifier = modifier
-                .focusRequester(FocusRequester())
-                .onFocusChanged { isTextFieldFocused = it.isFocused }
+                .weight(5f)
                 .fillMaxWidth()
-                .heightIn(min = Dimens.dp48, max = Dimens.dp48)
-                .clip(shape = RoundedCornerShape(Dimens.dp8))
-                .border(
-                    border = BorderStroke(Dimens.dp1, MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)),
-                    shape = RoundedCornerShape(Dimens.dp8)
-                ),
-            textStyle = TextStyle(fontSize = Dimens.sp14),
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Search,
-                    contentDescription = null,
-                    modifier = Modifier.size(Dimens.dp20),
-                )
+                .padding(horizontal = Dimens.dp24),
+            value = text,
+            onValueChange = {
+                text = it
+                onTextChange(it.text)
             },
-            trailingIcon = {
-                if (isTextFieldFocused && query.isNotEmpty()) {
-                    IconButton(onClick = { onQueryChange("") }) {
-                        Icon(
-                            imageVector = Icons.Filled.Clear,
-                            contentDescription = stringResource(R.string.clear),
-                            modifier = Modifier.size(Dimens.dp20),
-                        )
-                    }
-                }
-            },
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = MaterialTheme.colorScheme.surface,
-                disabledIndicatorColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                textColor = MaterialTheme.colorScheme.onSurface,
+            enabled = isEnabled,
+            textStyle = TextStyle(
+                color = MaterialTheme.colorScheme.primary,
+                fontSize = Dimens.sp16,
+                fontWeight = FontWeight.Bold
             ),
-            placeholder = {
-                Text(
-                    text = stringResource(R.string.search),
-                    fontSize = Dimens.sp14,
-                )
+            decorationBox = { innerTextField ->
+                if (text.text.isEmpty()) {
+                    Text(
+                        text = hint,
+                        color = Color.Gray.copy(alpha = 0.5f),
+                        fontSize = Dimens.sp16,
+                        fontWeight = FontWeight.Bold,
+                    )
+                }
+                innerTextField()
             },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Text,
                 imeAction = ImeAction.Search
             ),
-            keyboardActions = KeyboardActions(onSearch = {}),
+            keyboardActions = KeyboardActions(onSearch = { onSearchClicked() }),
+            singleLine = true
         )
+        Box(
+            modifier = modifier
+                .weight(1f)
+                .size(Dimens.dp40)
+                .background(color = Color.Transparent, shape = CircleShape)
+                .clickable {
+                    if (text.text.isNotEmpty()) {
+                        text = TextFieldValue(text = "")
+                        onTextChange("")
+                    }
+                },
+        ) {
+            if (text.text.isNotEmpty()) {
+                Icon(
+                    modifier = modifier
+                        .fillMaxSize()
+                        .padding(Dimens.dp10),
+                    painter = painterResource(id = R.drawable.baseline_clear_24),
+                    contentDescription = stringResource(R.string.search),
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+            } else {
+                Icon(
+                    modifier = modifier
+                        .fillMaxSize()
+                        .padding(Dimens.dp10),
+                    painter = painterResource(id = R.drawable.ic_search),
+                    contentDescription = stringResource(R.string.search),
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+            }
+        }
     }
 }
