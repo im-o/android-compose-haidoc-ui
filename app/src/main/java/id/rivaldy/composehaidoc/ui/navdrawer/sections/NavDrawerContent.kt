@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,6 +40,7 @@ fun NavDrawerContent(
             modifier = modifier
                 .fillMaxSize()
                 .background(Color.White)
+                .verticalScroll(rememberScrollState()),
         ) {
             Column(modifier = modifier.padding(start = Dimens.dp40, end = Dimens.dp100)) {
                 Spacer(modifier = modifier.height(Dimens.dp120))
@@ -53,6 +56,7 @@ fun NavDrawerContent(
             }
             Spacer(modifier = modifier.height(Dimens.dp80))
             NavDrawerBottom(modifier = modifier)
+            Spacer(modifier = modifier.height(Dimens.dp16))
         }
     }
 }
