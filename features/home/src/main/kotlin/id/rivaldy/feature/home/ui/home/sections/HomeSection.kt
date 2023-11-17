@@ -2,7 +2,6 @@ package id.rivaldy.feature.home.ui.home.sections
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
@@ -20,6 +19,7 @@ fun HomeSection(
     ) {
         Spacer(modifier = modifier.height(Dimens.dp24))
         HomeSlider()
+        HomeBannerService(modifier = modifier)
         Spacer(modifier = modifier.height(Dimens.dp24))
     }
 }

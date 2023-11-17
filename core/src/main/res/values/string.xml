@@ -40,6 +40,10 @@
     <string name="save_profile">Simpan profile</string>
     <string name="update_information">Update informasi seputar kesehatan semua bisa disini !</string>
     <string name="more">Selengkapnya</string>
+    <string name="image">Image</string>
+    <string name="priority_service">Layanan Khusus</string>
+    <string name="join_test">Daftar Tes</string>
+    <string name="covid_test">Tes Covid 19, Cegah Corona Sedini Mungkin</string>
 
     <string name="show_password">Show password</string>
     <string name="already_account">Already have an account?</string>
