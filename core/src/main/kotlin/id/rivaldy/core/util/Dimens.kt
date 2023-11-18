@@ -12,6 +12,7 @@ object Dimens {
     val dp1: Dp = 1.dp
     val dp3: Dp = 3.dp
     val dp4: Dp = 4.dp
+    val dp5: Dp = 5.dp
     val dp6: Dp = 6.dp
     val dp8: Dp = 8.dp
     val dp10: Dp = 10.dp
@@ -34,7 +35,9 @@ object Dimens {
     val dp120: Dp = 120.dp
     val dp140: Dp = 140.dp
     val dp150: Dp = 150.dp
+    val dp160: Dp = 160.dp
 
+    val sp10: TextUnit = 10.sp
     val sp11: TextUnit = 11.sp
     val sp12: TextUnit = 12.sp
     val sp14: TextUnit = 14.sp
