@@ -47,6 +47,7 @@
     <string name="track_check">Track Pemeriksaan</string>
     <string name="track">Track</string>
     <string name="checked_here">Kamu dapat mengecek progress pemeriksaanmu disini</string>
+    <string name="choose_service_type">Pilih Tipe Layanan Kesehatan Anda</string>
 
     <string name="show_password">Show password</string>
     <string name="already_account">Already have an account?</string>

@@ -25,6 +25,8 @@ fun HomeSection(
         HomeCategoryFilter(modifier = modifier)
         Spacer(modifier = modifier.height(Dimens.dp24))
         HomeProduct(modifier = modifier)
-        Spacer(modifier = modifier.height(Dimens.dp24))
+        Spacer(modifier = modifier.height(Dimens.dp40))
+        HomeServiceType(modifier = modifier)
+        Spacer(modifier = modifier.height(Dimens.dp40))
     }
 }
