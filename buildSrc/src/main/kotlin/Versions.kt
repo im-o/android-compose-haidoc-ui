@@ -11,7 +11,7 @@ object Versions {
     const val kotlin_gradle_plugin = "1.8.21"
     const val compose_compiler = "1.4.7"
     const val compose_bom_version = "2023.03.00"
-    const val constraintlayout_compose_version = "1.0.0"
+    const val constraintlayout_compose_version = "1.0.1"
 
     const val core_ktx_version = "1.12.0"
     const val lifecycle_ktx_version = "2.6.2"

@@ -28,5 +28,6 @@ fun HomeSection(
         Spacer(modifier = modifier.height(Dimens.dp40))
         HomeServiceType(modifier = modifier)
         Spacer(modifier = modifier.height(Dimens.dp40))
+        HomeService(modifier = modifier)
     }
 }

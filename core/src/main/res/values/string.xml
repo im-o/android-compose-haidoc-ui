@@ -48,6 +48,8 @@
     <string name="track">Track</string>
     <string name="checked_here">Kamu dapat mengecek progress pemeriksaanmu disini</string>
     <string name="choose_service_type">Pilih Tipe Layanan Kesehatan Anda</string>
+    <string name="dummy_place">Lenmarc Surabaya</string>
+    <string name="dummy_location">Dukuh Pakis, Surabaya</string>
 
     <string name="show_password">Show password</string>
     <string name="already_account">Already have an account?</string>
