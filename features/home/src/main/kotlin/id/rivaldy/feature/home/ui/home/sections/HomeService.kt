@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -28,6 +27,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
@@ -45,17 +45,22 @@ fun HomeService(
         "Pemeriksaan untuk Ibu dan Anak",
         "Operasi mata katarak untuk Lansia (S&K)",
     )
+    val cardSize = Dimens.dp150
+    val itemSize = services.size
+    val spacedBy = Dimens.dp16
+    val heightLazyColumn = (cardSize.value * itemSize) + (spacedBy.value * itemSize)
     LazyColumn(
         modifier = modifier
             .fillMaxWidth()
-            .height(200.dp),
-        verticalArrangement = Arrangement.spacedBy(Dimens.dp16),
+            .height(heightLazyColumn.dp),
+        verticalArrangement = Arrangement.spacedBy(spacedBy),
         contentPadding = PaddingValues(start = Dimens.dp16, end = Dimens.dp16),
     ) {
-        items(count = services.size) { index ->
+        items(count = itemSize) { index ->
             ServiceItem(
                 modifier = modifier,
                 serviceName = services[index],
+                cardSize = cardSize,
             )
         }
     }
@@ -65,11 +70,12 @@ fun HomeService(
 fun ServiceItem(
     modifier: Modifier = Modifier,
     serviceName: String,
+    cardSize: Dp,
 ) {
     ConstraintLayout(
         modifier = modifier
             .fillMaxWidth()
-            .wrapContentHeight()
+            .height(cardSize)
             .shadow(elevation = Dimens.dp3, shape = RoundedCornerShape(Dimens.dp16))
             .background(color = Color.White, shape = RoundedCornerShape(Dimens.dp16)),
     ) {
