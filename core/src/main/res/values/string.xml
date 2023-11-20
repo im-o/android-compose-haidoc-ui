@@ -55,9 +55,6 @@
     <string name="personal_data">Data Diri</string>
     <string name="personal_data_id">Data diri anda sesuai KTP</string>
     <string name="select_data">Pilih data yang ingin ditampilkan</string>
-
+    <string name="check_profile">Pastikan profile anda terisi dengan benar, data pribadi anda terjamin keamanannya</string>
     <string name="show_password">Show password</string>
-    <string name="already_account">Already have an account?</string>
-    <string name="login_">Log in.</string>
-    <string name="signup_">Sign up.</string>
 </resources>

@@ -71,14 +71,13 @@ fun ProfileCard(
                     text = stringResource(id = R.string.membership),
                     style = TextStyle(
                         fontWeight = FontWeight.Bold,
-                        color = Color.Gray.copy(alpha = 0.5f),
+                        color = Color.LightGray.copy(alpha = 0.5f),
                         fontSize = Dimens.sp14,
                     ),
                 )
             }
         }
         Spacer(modifier = modifier.height(Dimens.dp32))
-        Spacer(modifier = modifier.height(Dimens.dp8))
         Box(
             modifier = modifier
                 .fillMaxWidth()
@@ -91,7 +90,6 @@ fun ProfileCard(
             Text(
                 text = stringResource(id = R.string.fully_profile),
                 style = TextStyle(
-                    fontWeight = FontWeight.Bold,
                     color = Color.White,
                     fontSize = Dimens.sp14,
                 ),

@@ -1,6 +1,7 @@
 package id.rivaldy.feature.home.ui.profile.sections
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
@@ -21,7 +23,9 @@ fun ProfileSection(
 ) {
     Column(modifier = modifier.fillMaxSize()) {
         Spacer(modifier = modifier.height(Dimens.dp40))
-        ProfileTab(modifier = modifier)
+        Box(modifier = modifier.align(Alignment.CenterHorizontally)) {
+            ProfileTab(modifier = modifier)
+        }
         Spacer(modifier = modifier.height(Dimens.dp40))
         Column(
             modifier = modifier
@@ -37,6 +41,6 @@ fun ProfileSection(
             ProfileForm(modifier = modifier)
             Spacer(modifier = modifier.height(Dimens.dp24))
         }
-        Spacer(modifier = modifier.height(Dimens.dp60))
+        Spacer(modifier = modifier.height(Dimens.dp70))
     }
 }
