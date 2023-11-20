@@ -52,6 +52,9 @@
     <string name="dummy_location">Dukuh Pakis, Surabaya</string>
     <string name="get_notification">Dapatkan\nNotifikasi</string>
     <string name="ask_get_notification">Ingin mendapat update dari kami ?</string>
+    <string name="personal_data">Data Diri</string>
+    <string name="personal_data_id">Data diri anda sesuai KTP</string>
+    <string name="select_data">Pilih data yang ingin ditampilkan</string>
 
     <string name="show_password">Show password</string>
     <string name="already_account">Already have an account?</string>

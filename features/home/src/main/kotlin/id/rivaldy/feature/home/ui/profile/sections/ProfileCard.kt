@@ -81,6 +81,7 @@ fun ProfileCard(
         Spacer(modifier = modifier.height(Dimens.dp8))
         Box(
             modifier = modifier
+                .fillMaxWidth()
                 .background(
                     color = Color.Gray.copy(alpha = 0.3f),
                     shape = RoundedCornerShape(topStart = Dimens.dp20),

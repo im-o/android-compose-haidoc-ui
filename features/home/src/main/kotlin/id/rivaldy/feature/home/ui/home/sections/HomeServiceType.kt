@@ -54,7 +54,7 @@ fun HomeServiceType(
             style = TextStyle(
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
-                fontSize = Dimens.sp20,
+                fontSize = Dimens.sp18,
             ),
         )
         Spacer(modifier = modifier.height(Dimens.dp24))

@@ -32,6 +32,8 @@ fun ProfileSection(
         ) {
             ProfileCard(modifier = modifier)
             Spacer(modifier = modifier.height(Dimens.dp16))
+            ProfilePersonalTab(modifier = modifier)
+            Spacer(modifier = modifier.height(Dimens.dp16))
             ProfileForm(modifier = modifier)
             Spacer(modifier = modifier.height(Dimens.dp24))
         }
