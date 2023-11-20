@@ -38,9 +38,10 @@ import id.rivaldy.core.util.Dimens
 
 @Composable
 fun ProfileTab(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    tabSelected: Int
 ) {
-    var selectedService by remember { mutableStateOf(0) }
+    var selectedService by remember { mutableStateOf(tabSelected) }
     val serviceTypes = listOf(stringResource(id = R.string.my_profile), stringResource(id = R.string.setting))
     Box(
         modifier = modifier

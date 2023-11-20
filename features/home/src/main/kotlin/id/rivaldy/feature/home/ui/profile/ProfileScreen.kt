@@ -13,14 +13,18 @@ import id.rivaldy.feature.home.ui.profile.sections.ProfileSection
 
 @Composable
 fun ProfileScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    tabSelected: Int = 0,
 ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
     ) {
-        ProfileSection(modifier = modifier)
+        ProfileSection(
+            modifier = modifier,
+            tabSelected = tabSelected,
+        )
         Footer(modifier = modifier)
     }
 }

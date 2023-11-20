@@ -19,12 +19,13 @@ import id.rivaldy.core.util.Dimens
 
 @Composable
 fun ProfileSection(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    tabSelected: Int
 ) {
     Column(modifier = modifier.fillMaxSize()) {
         Spacer(modifier = modifier.height(Dimens.dp40))
         Box(modifier = modifier.align(Alignment.CenterHorizontally)) {
-            ProfileTab(modifier = modifier)
+            ProfileTab(modifier = modifier, tabSelected = tabSelected)
         }
         Spacer(modifier = modifier.height(Dimens.dp40))
         Column(

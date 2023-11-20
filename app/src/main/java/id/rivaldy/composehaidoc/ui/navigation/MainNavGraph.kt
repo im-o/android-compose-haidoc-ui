@@ -25,7 +25,7 @@ fun MainNavGraph(navController: NavHostController) {
             ProfileScreen()
         }
         composable(route = NavDrawerRoute.Setting.route) {
-            HomeScreen()
+            ProfileScreen(tabSelected = 1)
         }
     }
 }
