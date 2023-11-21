@@ -14,6 +14,7 @@ import id.rivaldy.core.data.model.local.screen.drawer.NavDrawerRoute
 fun MainHomeScreen(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
+    onUserLogout: () -> Unit,
 ) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -29,5 +30,6 @@ fun MainHomeScreen(
         navigationItemContentList = navigationItemContentList,
         navController = navController,
         currentDestination = currentDestination,
+        onUserLogout = onUserLogout
     )
 }

@@ -26,6 +26,7 @@ fun NavDrawerSection(
     navController: NavHostController,
     currentDestination: NavDestination?,
     onDrawerAction: () -> Unit,
+    onUserLogout: () -> Unit,
 ) {
     Row(
         modifier = modifier
@@ -51,7 +52,8 @@ fun NavDrawerSection(
                     navigationItemContentList = navigationItemContentList,
                     navController = navController,
                     currentDestination = currentDestination,
-                    onDrawerAction = onDrawerAction
+                    onDrawerAction = onDrawerAction,
+                    onUserLogout = onUserLogout,
                 )
             }
             Spacer(modifier = modifier.height(Dimens.dp80))

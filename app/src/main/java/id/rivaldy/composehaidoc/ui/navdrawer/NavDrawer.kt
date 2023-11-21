@@ -22,7 +22,8 @@ fun NavDrawer(
     modifier: Modifier = Modifier,
     navigationItemContentList: List<NavDrawerModel>,
     navController: NavHostController,
-    currentDestination: NavDestination?
+    currentDestination: NavDestination?,
+    onUserLogout: () -> Unit,
 ) {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val coroutineScope = rememberCoroutineScope()
@@ -43,7 +44,8 @@ fun NavDrawer(
                         coroutineScope.launch {
                             if (drawerState.isOpen) drawerState.close() else drawerState.open()
                         }
-                    }
+                    },
+                    onUserLogout = onUserLogout
                 )
             }
         }

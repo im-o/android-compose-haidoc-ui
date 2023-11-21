@@ -41,6 +41,7 @@ fun NavDrawerMenu(
     navController: NavHostController,
     currentDestination: NavDestination?,
     onDrawerAction: () -> Unit,
+    onUserLogout: () -> Unit,
 ) {
     Column {
         navigationItemContentList.forEach { screen ->
@@ -59,7 +60,7 @@ fun NavDrawerMenu(
                 .height(Dimens.dp32)
                 .fillMaxWidth(),
             shape = RoundedCornerShape(Dimens.dp16),
-            onClick = {},
+            onClick = { onUserLogout() },
             enabled = true,
             colors = ButtonDefaults.buttonColors(containerColor = Color.Red.copy(alpha = 0.8f)),
         ) {

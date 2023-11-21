@@ -18,7 +18,10 @@ fun RootNavGraph(navController: NavHostController) {
     ) {
         authNavGraph(navController = navController)
         composable(route = Graph.MAIN) {
-            MainHomeScreen()
+            MainHomeScreen {
+                navController.popBackStack()
+                navController.navigate(route = Graph.AUTH)
+            }
         }
     }
 }
